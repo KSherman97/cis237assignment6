@@ -6,39 +6,90 @@
     <title>@ViewBag.Title - Kyle</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/base.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Kyle's App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+
+<body style="background-color:darkgray;">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+
+            <!-- Logo -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!--@Html.ActionLink("Kalamazoo Wine", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
+                    </div>
+                    
+                    <div class="navbar-collapse collapse">
+                        <!--
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            @* the if statement here ensurest that this link will only show if the user is logged in*@
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Beverages", "Index", "Beverages")</li>
+                            }
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                        -->
+                    </div>
+                      
+                    <nav id="nav">
+                        <ul>
+                            <li>@Html.ActionLink("Kalamazoo Wine", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            @* the if statement here ensurest that this link will only show if the user is logged in*@
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Beverages", "Index", "Beverages")</li>
+                            }
+                            @Html.Partial("_LoginPartial")
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Kyle</p>
-        </footer>
-    </div>
+        <div class="container body-content">
+            <!-- Main -->
+            <section class="wrapper style1">
+                <div class="container">
+                    <div id="content">
+                        @RenderBody()
+                    </div>
+                </div>
+            </section>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Kyle | Kalamazoo Wines</p>
+            </footer>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+
+            <!-- Scripts -->
+            <script src="scripts/js/jquery.min.js"></script>
+            <script src="scripts/js/jquery.dropotron.min.js"></script>
+            <script src="scripts/js/skel.min.js"></script>
+            <script src="scripts/js/util.js"></script>
+            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+            <script src="scripts/js/main.js"></script>
+        </div>
+    </div>
 </body>
 </html>
