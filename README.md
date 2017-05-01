@@ -136,4 +136,4 @@ the culprit, but I don't know which ones.
 No outside resources used
 
 ## Known Problems, Issues, And/Or Errors in the Program
-No outside resources used
+No known issues
