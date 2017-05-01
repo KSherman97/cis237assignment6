@@ -1,6 +1,6 @@
 # Assignment 6 - Web Application to Manage Beverages
 
-## Due 04-26-2017 (11:59pm)
+## Due 04-28-2017 (11:59pm)
 
 ## Author
 Kyle Sherman
@@ -10,12 +10,12 @@ Kyle Sherman
 You are to create a web application using ASP.NET MVC to manage our beverage database.
 The application should have the following pages and navigation:
 
-A Home page that is not the default.
-A Contact page that is not the default.
-A About page that is not the default.
-A Beverages page that can only be seen when the user is logged in.
-Other CRUD related pages to augment the Beverages page.
-All of the built in user account pages.
+A Home page that is not the default. --
+A Contact page that is not the default. --
+A About page that is not the default. --
+A Beverages page that can only be seen when the user is logged in. --
+Other CRUD related pages to augment the Beverages page. --
+All of the built in user account pages. --
 
 Every view must use a Master Layout file for the things that do not change.
 
@@ -133,5 +133,7 @@ the culprit, but I don't know which ones.
 | Total                                   | 100    |
 
 ## Outside Resources Used
+No outside resources used
 
 ## Known Problems, Issues, And/Or Errors in the Program
+No outside resources used
